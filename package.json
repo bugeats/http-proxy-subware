@@ -1,0 +1,34 @@
+{
+  "name": "http-proxy-subware",
+  "version": "0.0.1",
+  "description": "Express/connect middleware for composing http proxies with more middleware - subware!",
+  "main": "index.js",
+  "scripts": {
+    "check": "npm run lint; npm run test",
+    "lint": "eslint ./",
+    "test": "tape ./lib/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bugeats/http-proxy-subware.git"
+  },
+  "keywords": [
+    "express",
+    "connect",
+    "proxy",
+    "middleware",
+    "subware",
+    "http",
+    "node"
+  ],
+  "author": "Chadwick Dahlquist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bugeats/http-proxy-subware/issues"
+  },
+  "homepage": "https://github.com/bugeats/http-proxy-subware#readme",
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "tape": "^4.6.3"
+  }
+}
