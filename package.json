@@ -6,7 +6,7 @@
   "scripts": {
     "check": "npm run lint; npm run test",
     "lint": "eslint ./",
-    "test": "tape ./lib/**/*.test.js"
+    "test": "tape ./**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,8 @@
   "homepage": "https://github.com/bugeats/http-proxy-subware#readme",
   "devDependencies": {
     "eslint": "^3.17.1",
+    "express": "^4.15.2",
+    "supertest": "^3.0.0",
     "tape": "^4.6.3"
   }
 }
