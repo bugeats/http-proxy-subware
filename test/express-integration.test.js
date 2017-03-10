@@ -47,3 +47,23 @@ testTargetServer.test('express integration basic proxy', (assert, targetServer, 
         });
 });
 
+testTargetServer.test('express integration parses target url', (assert, targetServer, done) => {
+    const app = express();
+
+    app.use('/', proxy({
+        target: `http://localhost:${ targetServer.address().port }/`
+    }));
+
+    request(app)
+        .get('/alpha.html')
+        .expect('Content-Type', /html/)
+        .expect(200)
+        .expect('<html><body><h1>alpha</h1></body></html>')
+        .end((err, res) => {
+            assert.ok(res, 'has response');
+            assert.error(err, 'no error');
+            assert.end();
+            done();
+        });
+});
+
