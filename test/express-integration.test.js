@@ -30,13 +30,14 @@ testTargetServer.test('express integration basic proxy', (assert, targetServer, 
     const app = express();
 
     app.use('/', proxy({
-        targetHost: 'localhost:' + targetServer.address().port
+        targetHost: 'localhost',
+        targetPort: targetServer.address().port
     }));
 
     request(app)
         .get('/alpha.html')
         .expect('Content-Type', /html/)
-        .expect(404)
+        .expect(200)
         .expect('<html><body><h1>alpha</h1></body></html>')
         .end((err, res) => {
             assert.ok(res, 'has response');
