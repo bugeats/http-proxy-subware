@@ -1,7 +1,5 @@
 'use strict';
 
-/* eslint-disable no-console */
-
 const app = require('express')();
 const tape = require('tape');
 
@@ -36,7 +34,6 @@ function getHostInfo() {
 function start(callback) {
     const hostInfo = getHostInfo();
     const server = app.listen(hostInfo.port, callback);
-    console.log(`test target server listening on ${ hostInfo.hostname }`);
     return server;
 }
 
